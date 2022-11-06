@@ -1,0 +1,278 @@
+.service {
+    padding-top: 190px;
+    &__container {
+        @include flex;
+        flex-direction: column;
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 54px;
+        color: $title-color;
+        text-align: center;
+        margin-bottom: 80px;
+    }
+    &__list {
+        width: 100%;
+        @include flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        position: relative;
+    }
+    &__list::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 45%;
+        left: -50px;
+        width: 50px;
+        height: 50px;
+        @include background;
+        background-image: url('../../img/service-arrow-1-min.svg');
+        background-size: 25% auto;
+        cursor: pointer;
+        &:hover {
+            background-color: #fff;
+        }
+    }
+    &__list::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 45%;
+        right: -50px;
+        width: 50px;
+        height: 50px;
+        @include background;
+        background-image: url('../../img/service-arrow-2-min.svg');
+        background-size: 25% auto;
+        cursor: pointer;
+        &:hover {
+            background-color: #fff;
+        }
+    }
+    &__item {
+        max-width: 193px;
+        width: 100%;
+        margin-bottom: 14px;
+        @include flex;
+        flex-direction: column;
+    }
+    &__item+&__item {
+        margin-left: 12px;
+    }
+    &__link {
+        padding: 31px 33px 28px 33px;
+        text-align: center;
+        display: block;
+        width: 100%;
+        background-color: #FFFFFF;
+        border: 1px solid #F3F3F3;
+        border-radius: 5px;
+        transition-duration: 0.4s;
+    }
+    &__link:hover {
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+    &__link:active {
+        filter: none;
+        opacity: 0.6;
+    }
+    &__item-text {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        color: $title-color;
+    }
+    &__link::before {
+        content: '';
+        display: inline-block;
+        width: 78px;
+        height: 78px;
+        @include background;
+        background-size: contain;
+        margin-bottom: 21px;
+    }
+    &__item:nth-child(1) &__link::before {
+        content: '';
+        background-image: url('../../img/service-1-min.svg');
+    }
+    &__item:nth-child(2) &__link::before {
+        content: '';
+        background-image: url('../../img/service-2-min.svg');
+    }
+    &__item:nth-child(3) &__link::before {
+        content: '';
+        background-image: url('../../img/service-3-min.svg');
+    }
+    &__item:nth-child(4) &__link::before {
+        content: '';
+        background-image: url('../../img/service-5-min.svg');
+    }
+    &__item:nth-child(5) &__link::before {
+        content: '';
+        background-image: url('../../img/service-6-min.svg');
+    }
+    &__item:nth-child(6) &__link::before {
+        content: '';
+        background-image: url('../../img/service-4.svg');
+    }
+    &__block {
+        @include flex;
+        width: 100%;
+        background-color: $snow-color;
+        padding: 25px;
+        border-radius: 5px;
+    }
+    &__picture {
+        border-radius: 10px;
+        overflow: hidden;
+        max-width: 524px;
+        width: 100%;
+        img {
+            object-fit: cover;
+        }
+    }
+    &__content {
+        margin-left: 67px;
+    }
+    &__inner-title {
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 32px;
+        color: $title-color;
+        margin-bottom: 18px;
+    }
+    &__text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: $text-color;
+        max-width: 492px;
+        margin-bottom: 32px;
+    }
+    &__text-1 {
+        margin-bottom: 10px;
+    }
+    &__btn-block {
+        @include flex;
+    }
+    &__btn {
+        display: block;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 21px;
+        color: $snow-color;
+        padding: 15px 36px;
+        border-radius: 3px;
+        @include flex;
+        transition-duration: 0.4s;
+    }
+    &__btn:nth-child(1) {
+        background: #FFBD54;
+    }
+    &__btn:nth-child(1)::before {
+        content: '';
+        display: inline-block;
+        width: 21px;
+        height: 21px;
+        @include background;
+        background-size: contain;
+        background-image: url('../../img/service-money-min.svg');
+        margin-right: 7px;
+    }
+    &__btn:nth-child(1):hover {
+        background-color: $title-color;
+        color: #FFBD54;
+    }
+    &__btn:nth-child(1):active {
+        opacity: 0.6;
+    }
+    &__btn:nth-child(2) {
+        margin-left: 21px;
+        background: $title-color;
+    }
+    &__btn:nth-child(2)::before {
+        content: '';
+        display: inline-block;
+        width: 21px;
+        height: 21px;
+        @include background;
+        background-size: contain;
+        background-image: url('../../img/service-document-min.svg');
+        margin-right: 7px;
+    }
+    &__btn:nth-child(2):hover {
+        color: $title-color;
+        background-color: #FFBD54;
+    }
+    &__btn:nth-child(2):active {
+        opacity: 0.6;
+    }
+}
+
+@media only screen and (max-width:1410px) {
+    .service {
+        &__list::after,
+        &__list::before {
+            content: '';
+            display: none;
+        }
+    }
+}
+
+@media only screen and (max-width:1260px) {
+    .service {
+        &__list {
+            justify-content: center;
+        }
+        &__content {
+            margin-left: 25px;
+        }
+    }
+}
+
+@media only screen and (max-width:1115px) {
+    .service {
+        padding-top: 80px;
+        &__block {
+            flex-direction: column;
+        }
+        &__content {
+            margin-top: 40px;
+            text-align: center;
+            margin-left: 0;
+        }
+        &__picture {
+            max-width: 90%;
+            width: 100%;
+        }
+        &__text {
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        &__btn-block {
+            justify-content: center;
+        }
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .service {
+        &__btn-block {
+            flex-direction: column;
+        }
+        &__btn {
+            width: 90%;
+            justify-content: center;
+        }
+        &__btn:nth-child(2) {
+            margin-left: 0;
+            margin-top: 20px;
+        }
+        &__picture {
+            max-width: 95%;
+        }
+    }
+}

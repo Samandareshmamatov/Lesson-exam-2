@@ -1,0 +1,23 @@
+@mixin background {
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+}
+
+@mixin main-text($title-color) {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: $title-color;
+}
+
+@mixin secondary-text($title-color) {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: $title-color;
+}

@@ -1,0 +1,131 @@
+.order {
+    padding-top: 200px;
+    &__block {
+        @include flex;
+        align-items: start;
+    }
+    &__iframe {
+        max-width: 462px;
+        width: 100%;
+    }
+    &__iframe-2 {
+        display: none;
+    }
+    &__box {
+        max-width: 100%;
+        width: 100%;
+        background-color: #333333;
+        @include flex;
+        padding: 55px 74px 58px 150px
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 62px;
+        color: #FFFFFF;
+        margin-bottom: 14px;
+    }
+    &__text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        /* or 125% */
+        color: #949494;
+        max-width: 350px;
+        margin-bottom: 29px;
+    }
+    &__form {
+        max-width: 375px;
+        width: 100%;
+    }
+    &__input {
+        width: 100%;
+        display: block;
+        padding: 14px 22px;
+        margin-bottom: 14px;
+    }
+    &__input::placeholder {
+        font-size: 16px;
+        line-height: 21px;
+        /* identical to box height */
+        display: flex;
+        align-items: center;
+        color: #949494;
+    }
+    &__area {
+        width: 100%;
+        resize: none;
+        height: 165px;
+        padding: 5px;
+        margin-bottom: 30px;
+    }
+    &__btn {
+        border: none;
+        background-color: #FFBD54;
+        color: $snow-color;
+        font-weight: 500;
+        font-size: 16px;
+        padding: 15px 50px;
+        line-height: 21px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+    &__btn:hover {
+        background-color: #333333;
+        color: #FFBD54;
+    }
+}
+
+@media only screen and (max-width:1050px) {
+    .order {
+        padding-top: 140px;
+        &__box {
+            padding: 55px 40px 58px 40px
+        }
+    }
+}
+
+@media only screen and (max-width:905px) {
+    .order {
+        padding-top: 100px;
+        &__block {
+            flex-direction: column;
+        }
+        &__iframe {
+            display: none;
+        }
+        &__iframe-2 {
+            display: block;
+            margin-left: 40px;
+        }
+        &__box {
+            padding: 55px 40px 58px 40px
+        }
+    }
+}
+
+@media only screen and (max-width:770px) {
+    .order {
+        padding-top: 100px;
+        &__box {
+            flex-direction: column;
+            align-items: center;
+        }
+        &__iframe {
+            display: none;
+        }
+        &__iframe-2 {
+            margin-left: 0;
+            margin-top: 40px;
+        }
+        &__btn {
+            margin: 0 auto;
+            display: inline-block;
+            display: flex;
+            justify-content: center;
+        }
+        &__box {
+            padding: 55px 40px 58px 40px
+        }
+    }
+}

@@ -1,0 +1,221 @@
+.site-header__top-container {
+    @include flex;
+    justify-content: space-between;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+.site-header__home {
+    @include flex;
+    margin-left: 180px;
+    &::before {
+        content: '';
+        display: inline-block;
+        width: 14px;
+        height: 13px;
+        @include background;
+        background-image: url('../../img/house-min.svg');
+        margin-right: 9px;
+    }
+}
+
+.site-header__adress {
+    @include secondary-text($title-color);
+}
+
+.site-header__tel-list {
+    @include flex;
+    &::before {
+        content: '';
+        display: inline-block;
+        width: 13px;
+        height: 13px;
+        @include background;
+        background-image: url('../../img/phone-min.svg');
+        background-size: cover;
+        margin-right: 9px;
+    }
+}
+
+.site-header__tel-item+.site-header__tel-item {
+    margin-left: 9px;
+    @include flex;
+    &::before {
+        content: '';
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        @include background;
+        background-image: url('../../img/circle.svg');
+        background-size: cover;
+        margin-right: 9px;
+    }
+}
+
+.site-header__tel {
+    @include secondary-text($title-color);
+    transition-duration: 0.4s;
+}
+
+.site-header__tel:hover {
+    color: #FFBD54;
+}
+
+.site-header__tel:active {
+    color: $title-color;
+    opacity: 0.6;
+}
+
+.site-header__day-block {
+    @include flex;
+    &::before {
+        content: '';
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        @include background;
+        background-image: url('../../img/schedule-min.svg');
+        background-size: cover;
+        margin-right: 7px;
+    }
+}
+
+.site-header__day {
+    @include secondary-text($title-color);
+}
+
+.site-header__day:nth-child(2) {
+    margin-left: 17px;
+}
+
+.site-header__bottom {
+    background-color: #fff;
+}
+
+.site-header__bottom-container {
+    @include flex;
+    justify-content: space-between;
+}
+
+.site-header__logo-box {
+    display: inline-block;
+    width: 120px;
+    position: relative;
+    transform: scale(1.5);
+    display: flex;
+    flex-shrink: 0;
+    transition-duration: 0.2s;
+}
+
+.site-header__logo-box:hover {
+    opacity: 0.9;
+}
+
+.site-header__logo-box:active {
+    opacity: 0.6;
+}
+
+.site-header__list {
+    @include flex;
+}
+
+.site-header__item+.site-header__item {
+    margin-left: 55px;
+}
+
+.site-header__item:nth-child(1) {
+    @include flex;
+    border-bottom: 4px solid transparent;
+}
+
+.site-header__item:nth-child(1) .site-header__link {
+    border-bottom: 4px solid transparent;
+    margin-top: 8px;
+}
+
+.site-header__item:nth-child(1)::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    @include background;
+    background-image: url('../../img/active.svg');
+    background-size: cover;
+    margin-top: 4px;
+    margin-right: 12px;
+}
+
+.site-header__link {
+    transition-duration: 0.1s;
+    @include main-text($title-color);
+}
+
+.site-header__item:hover .site-header__link {
+    border-bottom: 4px solid #e2f56c;
+}
+
+.site-header__item:active .site-header__link {
+    opacity: 0.6;
+}
+
+.site-header__item:active::before {
+    content: '';
+    opacity: 0.6;
+}
+
+.site-header__btn {
+    @include main-text($title-color);
+    @include flex;
+}
+
+.site-header__btn::before {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    @include background;
+    background-image: url('../../img/pet-min.svg');
+    background-size: cover;
+    margin-right: 12px;
+}
+
+.site-header__menu {
+    display: block;
+    width: 25px;
+    height: 25px;
+    @include background;
+    background-image: url('../../img/hamburger.svg');
+    background-size: cover;
+    display: none;
+}
+
+@media only screen and (max-width:1240px) {
+    .site-header__home {
+        margin-left: 0;
+    }
+    .site-header__logo-box {
+        transform: scale(1);
+    }
+    .site-header__item+.site-header__item {
+        margin-left: 20px;
+    }
+}
+
+@media only screen and (max-width:1040px) {
+    .site-header__top {
+        display: none;
+    }
+    .site-header__bottom {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .site-header__list {
+        display: none;
+    }
+    .site-header__btn {
+        display: none;
+    }
+    .site-header__menu {
+        display: block;
+    }
+}

@@ -1,0 +1,99 @@
+.hero {
+    @include background;
+    background-image: url('../../img/hero-bg-1.png'), url('../../img/hero-bg-2.png');
+    background-position: left top -100px, right bottom -40px;
+    &__container {
+        padding-top: 153px;
+        padding-bottom: 311px;
+        margin-left: 50%;
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 70px;
+        line-height: 64px;
+        color: $title-color;
+        max-width: 608px;
+        margin-bottom: 29px;
+    }
+    &__span {
+        color: #78C0DE;
+    }
+    &__text {
+        @include main-text(#949494);
+        max-width: 550px;
+        margin-bottom: 38px;
+    }
+    &__btn {
+        display: inline-block;
+        @include main-text(#fff);
+        background: $title-color;
+        border-radius: 3px;
+        padding: 15px 48px;
+        transition-duration: 0.4s;
+    }
+    &__btn:hover {
+        color: $title-color;
+        background-color: #FFBD54;
+    }
+    &__btn:active {
+        opacity: 0.6;
+    }
+}
+
+@media only screen and (max-width:1230px) {
+    .hero {
+        background-size: 40% auto, 20% auto;
+        background-position: left top -60px, right bottom -40px;
+        &__container {
+            margin-left: 37%;
+            padding-top: 120px;
+            padding-bottom: 250px;
+        }
+    }
+}
+
+@media only screen and (max-width:962px) {
+    .hero {
+        background-size: 30% auto, 15% auto;
+        background-position: left top -40px, right bottom -20px;
+        &__container {
+            margin-left: 27%;
+            padding-top: 90px;
+            padding-bottom: 160px;
+        }
+        &__title {
+            font-size: 48px;
+            line-height: 36px;
+            max-width: 450px;
+            margin-bottom: 18px;
+        }
+        &__text {
+            @include secondary-text(#949494);
+            font-weight: 400;
+            max-width: 400px;
+            margin-bottom: 22px;
+        }
+    }
+}
+
+@media only screen and (max-width:630px) {
+    .hero {
+        background-size: contain, 0%;
+        background-position: left center;
+        &__container {
+            margin-left: 0;
+            padding-top: 70px;
+            padding-bottom: 130px;
+            @include flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        &__title {
+            max-width: 100%;
+        }
+        &__text {
+            @include secondary-text($title-color);
+            max-width: 100%;
+        }
+    }
+}

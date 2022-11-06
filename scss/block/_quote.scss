@@ -1,0 +1,65 @@
+.quote {
+    padding-top: 40px;
+    &__container {
+        @include flex;
+        flex-direction: column;
+    }
+    &__hr {
+        border: none;
+        width: 140px;
+        height: 2px;
+        background-color: #DBDBDB;
+        margin: 0;
+    }
+    &__text {
+        max-width: 753px;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 26px;
+        text-align: center;
+        color: #949494;
+        margin-top: 43px;
+        margin-bottom: 35px;
+        position: relative;
+        &::before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            left: -70px;
+            top: -20px;
+            width: 50px;
+            height: 50px;
+            @include background;
+            background-image: url('../../img/quote-1-min.svg');
+            background-size: contain;
+        }
+        &::after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            right: -70px;
+            bottom: -20px;
+            width: 50px;
+            height: 50px;
+            @include background;
+            background-image: url('../../img/quote-2-min.svg');
+            background-size: contain;
+        }
+    }
+    &__author {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 26px;
+        color: #333333;
+        margin-top: 35px;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .quote__text::before,
+    .quote__text::after {
+        content: "";
+        display: none;
+    }
+}
